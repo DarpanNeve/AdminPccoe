@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">AdminPanel</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="todo">todo</string>
+    <string name="search">Search</string>
+    <string name="day">Day</string>
+    <string name="batch">Batch</string>
+    <string name="division">Division</string>
+    <string name="profile">Profile</string>
+    <string name="timetable">TimeTable</string>
+    <string name="logout">Logout</string>
+    <string name="weekly_timetable">Weekly TimeTable</string>
+    <string name="feedback">Feedback</string>
+    <string name="about">About</string>
+    <string name="url">https://d155-2401-4900-1ff2-2385-314c-3055-59f6-7e5a.in.ngrok.io</string>
+</resources>
