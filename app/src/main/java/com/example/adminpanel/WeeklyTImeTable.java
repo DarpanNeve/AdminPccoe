@@ -61,7 +61,7 @@ public class WeeklyTImeTable extends AppCompatActivity {
     LinearLayout layout;
     String selectdivision,user;
     ScrollView timetableview;
-    String url ="https://ea30-190-2-131-201.eu.ngrok.io";
+    String url ="https://3c28-103-151-234-62.in.ngrok.io";
 
     @SuppressLint("MissingInflatedId")
     @Override

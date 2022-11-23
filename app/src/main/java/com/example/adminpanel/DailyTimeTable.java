@@ -36,7 +36,7 @@ public class DailyTimeTable extends Fragment {
     RecyclerView timetable;
     Button Search;
     MainModel[] data;
-    String user,url="https://ea30-190-2-131-201.eu.ngrok.io";
+    String user,url="https://3c28-103-151-234-62.in.ngrok.io";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
