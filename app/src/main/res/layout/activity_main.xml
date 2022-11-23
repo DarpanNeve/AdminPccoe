@@ -75,6 +75,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:layout_marginStart="10dp"
         android:background="?attr/colorPrimaryVariant"
         app:headerLayout="@layout/profile_sidebar"
         app:menu="@menu/iconmenu">
