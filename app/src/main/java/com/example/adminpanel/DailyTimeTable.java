@@ -22,6 +22,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -31,12 +34,13 @@ import java.util.Map;
 public class DailyTimeTable extends Fragment {
     View view;
     String[] day = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
-    String[] batch = {"1", "2", "3",};
-    String[] division = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"};
     RecyclerView timetable;
     Button Search;
     MainModel[] data;
-    String user,url="https://3c28-103-151-234-62.in.ngrok.io";
+    FirebaseAuth firebaseAuth;
+    FirebaseUser firebaseUser;
+    String user,email,name,dummy;
+    private final String url="https://3c28-103-151-234-62.in.ngrok.io";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,24 +60,26 @@ public class DailyTimeTable extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         //To select the data to enter in recyclerview
         Spinner Day = requireView().findViewById(R.id.Day);
-        Spinner Batch = getView().findViewById(R.id.batch);
-        Spinner Division = getView().findViewById(R.id.Division);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, day);
         Day.setAdapter(adapter);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, batch);
-        Batch.setAdapter(adapter1);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, division);
-        Division.setAdapter(adapter2);
         timetable=getView().findViewById(R.id.timetable);
         timetable.setLayoutManager(new LinearLayoutManager(getContext()));
         Search = getView().findViewById(R.id.search);
+        firebaseAuth= FirebaseAuth.getInstance();
+        firebaseUser=firebaseAuth.getCurrentUser();
+        if(firebaseUser!=null)
+        {
+            email=firebaseUser.getEmail();
+            dummy=email.replace("."," ");
+            name=dummy.replace("@pccoepune.org","");
+
+        }
+
 
         Search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String selectday = Day.getSelectedItem().toString();
-                String selectdivision = Division.getSelectedItem().toString();
-                String selectbatch = Batch.getSelectedItem().toString();
                 StringRequest request = new StringRequest(Request.Method.POST, url+"/fetch_input.php", new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -103,8 +109,7 @@ public class DailyTimeTable extends Fragment {
                     protected Map<String, String> getParams() throws AuthFailureError {
                         Map<String, String> param = new HashMap<>();
                         param.put("Day", selectday);
-                        param.put("Division", selectdivision);
-                        param.put("Batch", selectbatch);
+                        param.put("Name", name);
                         return param;
                     }
                 };

@@ -56,7 +56,6 @@ public class Profile extends Fragment {
 
         // Initialize firebase auth
         firebaseAuth=FirebaseAuth.getInstance();
-
         // Initialize firebase user
         FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
         if(firebaseUser!=null)
