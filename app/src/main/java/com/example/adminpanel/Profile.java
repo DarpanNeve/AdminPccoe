@@ -29,7 +29,7 @@ public class Profile extends Fragment {
     ImageView photo;
     GoogleSignInClient googleSignInClient;
     FirebaseAuth firebaseAuth;
-
+    String email1,name1;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,8 +64,12 @@ public class Profile extends Fragment {
             // Set image on image view
             Glide.with(requireContext()).load(firebaseUser.getPhotoUrl()).circleCrop().into(photo);
             // set name on text view
-            name.setText(firebaseUser.getDisplayName());
             email.setText(firebaseUser.getEmail());
+            email1=firebaseUser.getEmail();
+            name1=email1.replace("."," ");
+            name1=name1.replace("@pccoepune org","");
+            name1 = name1.replaceAll("[0-9]","");
+            name.setText(name1);
         }
         // Initialize sign in client
         googleSignInClient= GoogleSignIn.getClient(requireContext(), GoogleSignInOptions.DEFAULT_SIGN_IN);
