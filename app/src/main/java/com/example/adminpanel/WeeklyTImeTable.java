@@ -61,7 +61,7 @@ public class WeeklyTImeTable extends AppCompatActivity {
     LinearLayout layout;
     String selectdivision,user;
     ScrollView timetableview;
-    String url ="https://3c28-103-151-234-62.in.ngrok.io";
+    private final String url ="http://181.215.79.82";
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -106,7 +106,7 @@ public class WeeklyTImeTable extends AppCompatActivity {
         export();
     }
     private void showdata(String selectday,RecyclerView RV,String selectdivision) {
-        StringRequest request = new StringRequest(Request.Method.POST, url + "/weekly_combined/fetch_Data.php", new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.POST, url + "/fetch_Data.php", new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {

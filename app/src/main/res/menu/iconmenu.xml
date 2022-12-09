@@ -10,6 +10,8 @@
     <item android:id="@+id/weeklytimetable"
         android:title="@string/weekly_timetable"
         />
+    <item android:id="@+id/Notice"
+        android:title="Notice"/>
     <item android:id="@+id/feedback"
         android:title="@string/feedback"
         />

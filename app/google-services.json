@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "873112653322",
+    "firebase_url": "https://pccoe-final-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "pccoe-final",
     "storage_bucket": "pccoe-final.appspot.com"
   },
@@ -13,6 +14,51 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "873112653322-8qq16pu8g0rfqbmp6g6vl0q1v7tg4otc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.adminpanel",
+            "certificate_hash": "066c7ec89f230d87e5d3b50b7a0f605aed2bdc2d"
+          }
+        },
+        {
+          "client_id": "873112653322-asbm6uhvint6h7n5tnkuh8bijmv13cvd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO5oN_z_GfGlepJVfpT06uHVINYUyEZFE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "873112653322-asbm6uhvint6h7n5tnkuh8bijmv13cvd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:873112653322:android:eb470f1804bb36bb8499f3",
+        "android_client_info": {
+          "package_name": "com.example.pccoe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "873112653322-mlvu1m26jhe2h3u1rpj8rrov875h7quj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pccoe",
+            "certificate_hash": "066c7ec89f230d87e5d3b50b7a0f605aed2bdc2d"
+          }
+        },
         {
           "client_id": "873112653322-asbm6uhvint6h7n5tnkuh8bijmv13cvd.apps.googleusercontent.com",
           "client_type": 3

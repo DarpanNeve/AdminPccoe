@@ -78,6 +78,11 @@ public class MainActivity extends AppCompatActivity {
                         Intent myIntent = new Intent(MainActivity.this, WeeklyTImeTable.class);
                         MainActivity.this.startActivity(myIntent);
                         break;
+                    case R.id.Notice:
+                        drawer.closeDrawer(GravityCompat.START);
+                        Intent Intent1 = new Intent(MainActivity.this, NoticeActivity.class);
+                        MainActivity.this.startActivity(Intent1);
+                        break;
                     case R.id.about:
                         drawer.closeDrawer(GravityCompat.START);
                         startActivity(new Intent(Intent.ACTION_VIEW,
