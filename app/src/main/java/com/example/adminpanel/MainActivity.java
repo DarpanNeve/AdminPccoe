@@ -78,6 +78,16 @@ public class MainActivity extends AppCompatActivity {
                         Intent myIntent = new Intent(MainActivity.this, WeeklyTImeTable.class);
                         MainActivity.this.startActivity(myIntent);
                         break;
+                    case R.id.teacherweeklytimetable:
+                        drawer.closeDrawer(GravityCompat.START);
+                        Intent my1Intent = new Intent(MainActivity.this,TeacherWeeklyTImeTable.class);
+                        MainActivity.this.startActivity(my1Intent);
+                        break;
+                    case R.id.classroomweeklytimetable:
+                        drawer.closeDrawer(GravityCompat.START);
+                        Intent my2Intent = new Intent(MainActivity.this,ClassroomWeeklyTimeTable.class);
+                        MainActivity.this.startActivity(my2Intent);
+                        break;
                     case R.id.Notice:
                         drawer.closeDrawer(GravityCompat.START);
                         Intent Intent1 = new Intent(MainActivity.this, NoticeActivity.class);

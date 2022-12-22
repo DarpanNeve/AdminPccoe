@@ -10,8 +10,16 @@
     <item android:id="@+id/weeklytimetable"
         android:title="@string/weekly_timetable"
         />
+    <item android:id="@+id/teacherweeklytimetable"
+        android:title="@string/teacher_weekly_time_table"
+        />
+    <item android:id="@+id/classroomweeklytimetable"
+        android:title="Classroom Weekly Time Table"
+        />
     <item android:id="@+id/Notice"
-        android:title="Notice"/>
+        android:title="Notice"
+        />
+
     <item android:id="@+id/feedback"
         android:title="@string/feedback"
         />
