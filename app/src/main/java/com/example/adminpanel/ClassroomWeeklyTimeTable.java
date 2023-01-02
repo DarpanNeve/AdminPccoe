@@ -44,6 +44,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonSyntaxException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -61,7 +62,7 @@ public class ClassroomWeeklyTimeTable extends AppCompatActivity {
     LinearLayout layout;
     String selectdivision,user;
     ScrollView timetableview;
-    private final String url ="http://181.215.79.82";
+    private final String url ="https://d291-103-151-234-92.in.ngrok.io";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,19 +109,22 @@ public class ClassroomWeeklyTimeTable extends AppCompatActivity {
 
             @Override
             public void onResponse(String response) {
-                Toast.makeText(getApplicationContext(), "successful", Toast.LENGTH_SHORT).show();
-                GsonBuilder builder = new GsonBuilder();
-                Gson gson = builder.create();
-                MainModel[] data = gson.fromJson(response, MainModel[].class);
-                user= gson.toJson(data);
-                if(user.length()!=2) {
-                    ClassroomWeeklyDataAdapter adapters = new ClassroomWeeklyDataAdapter(data);
-                    RV.setAdapter(adapters);
+                try {
                     Toast.makeText(getApplicationContext(), "successful", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Toast.makeText(getApplicationContext(), "No Response Found", Toast.LENGTH_SHORT).show();
+                    GsonBuilder builder = new GsonBuilder();
+                    Gson gson = builder.create();
+                    MainModel[] data = gson.fromJson(response, MainModel[].class);
+                    user = gson.toJson(data);
+                    if (user.length() != 2) {
+                        ClassroomWeeklyDataAdapter adapters = new ClassroomWeeklyDataAdapter(data);
+                        RV.setAdapter(adapters);
+                        Toast.makeText(getApplicationContext(), "successful", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "No Response Found", Toast.LENGTH_SHORT).show();
 
+                    }
+                } catch (JsonSyntaxException e) {
+                    e.printStackTrace();
                 }
 
             }

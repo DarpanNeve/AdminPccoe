@@ -80,8 +80,7 @@
                             android:layout_height="match_parent"
                             android:background="@drawable/textview_border"
                             android:paddingStart="10dp"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textSize="20sp" />
 
                         <TextView
                             android:id="@+id/textView5"
@@ -92,8 +91,7 @@
                             android:gravity="center"
                             android:text="9:00am-10:00am"
                             android:textColor="#000000"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/textView6"
@@ -104,8 +102,7 @@
                             android:gravity="center"
                             android:text="10:00am-11:00am"
                             android:textColor="#000000"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/textView8"
@@ -116,8 +113,7 @@
                             android:gravity="center"
                             android:text="11:10am -12:10am"
                             android:textColor="#000000"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/NoticeTime"
@@ -128,8 +124,7 @@
                             android:gravity="center"
                             android:text="12:10am-1:00pm"
                             android:textColor="#000000"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/MessageName"
@@ -140,8 +135,7 @@
                             android:gravity="center"
                             android:text="1:00pm- 2:00pm"
                             android:textColor="#000000"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/textView"
@@ -152,8 +146,7 @@
                             android:gravity="center"
                             android:text="2:00pm- 3:00pm"
                             android:textColor="#000000"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/textView2"
@@ -164,8 +157,7 @@
                             android:gravity="center"
                             android:text="3:00pm- 4:00pm"
                             android:textColor="#000000"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/textView3"
@@ -176,8 +168,7 @@
                             android:gravity="center"
                             android:text="4:00pm-5:00pm"
                             android:textColor="#000000"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textSize="16sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -195,8 +186,7 @@
                             android:text="Monday"
                             android:textColor="#000000"
                             android:textColorHint="#FFFFFF"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textSize="20sp" />
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/Mondaydata"
@@ -221,8 +211,7 @@
                             android:paddingStart="10dp"
                             android:text="Tuesday"
                             android:textColor="#000000"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textSize="20sp" />
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/Tuesdaydata"
@@ -246,8 +235,7 @@
                             android:paddingStart="10dp"
                             android:text="Wednesday"
                             android:textColor="#000000"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textSize="20sp" />
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/Wednesdaydata"
@@ -271,8 +259,7 @@
                             android:paddingStart="10dp"
                             android:text="Thursday"
                             android:textColor="#000000"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textSize="20sp" />
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/Thursdaydata"
@@ -296,8 +283,7 @@
                             android:paddingStart="10dp"
                             android:text="Friday"
                             android:textColor="#000000"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textSize="20sp" />
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/Fridaydata"

@@ -61,7 +61,7 @@ public class TeacherWeeklyTImeTable extends AppCompatActivity {
     LinearLayout layout;
     String selectdivision,user;
     ScrollView timetableview;
-    private final String url ="http://181.215.79.82";
+    private final String url ="https://d291-103-151-234-92.in.ngrok.io";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

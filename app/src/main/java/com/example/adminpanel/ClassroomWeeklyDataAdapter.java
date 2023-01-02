@@ -33,6 +33,10 @@ public class ClassroomWeeklyDataAdapter extends RecyclerView.Adapter{
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.weekly_two_hour_view, parent, false);
             return new WeeklyDataAdapter.ViewHolderFive(view);
         }
+        if (viewType == 5) {
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.weekly_half_hour_view, parent, false);
+            return new WeeklyDataAdapter.ViewHolderSix(view);
+        }
         view = LayoutInflater.from(parent.getContext()).inflate(R.layout.weekly_theory_view, parent, false);
         return new WeeklyDataAdapter.ViewHolderOne(view);
     }
@@ -52,7 +56,12 @@ public class ClassroomWeeklyDataAdapter extends RecyclerView.Adapter{
                 viewHolderFive.Classroom.setText(String.valueOf(data[position].getClassroom()));
                 viewHolderFive.Teacher.setText(String.valueOf(data[position].getTeacher()));
                 break;
-
+            case "H":
+                WeeklyDataAdapter.ViewHolderSix viewHolderSix = (WeeklyDataAdapter.ViewHolderSix) holder;
+                viewHolderSix.Subject.setText(String.valueOf(data[position].getSubject()));
+                viewHolderSix.Classroom.setText(String.valueOf(data[position].getClassroom()));
+                viewHolderSix.Teacher.setText(String.valueOf(data[position].getTeacher()));
+                break;
 
             case "P":
                 WeeklyDataAdapter.ViewHolderFour viewHolderFour = (WeeklyDataAdapter.ViewHolderFour) holder;
@@ -80,6 +89,8 @@ public class ClassroomWeeklyDataAdapter extends RecyclerView.Adapter{
                 return 3;
             case "S":
                 return 4;
+            case "H":
+                return 5;
         }
         return 0;
     }
@@ -133,6 +144,17 @@ public class ClassroomWeeklyDataAdapter extends RecyclerView.Adapter{
     static class ViewHolderFive extends RecyclerView.ViewHolder {
         TextView Classroom, Subject, Teacher;
         public ViewHolderFive(@NonNull View itemView) {
+            super(itemView);
+            Classroom = itemView.findViewById(R.id.classroom);
+            Subject = itemView.findViewById(R.id.subject);
+            Teacher = itemView.findViewById(R.id.teacher);
+
+
+        }
+    }
+    static class ViewHolderSix extends RecyclerView.ViewHolder {
+        TextView Classroom, Subject, Teacher;
+        public ViewHolderSix(@NonNull View itemView) {
             super(itemView);
             Classroom = itemView.findViewById(R.id.classroom);
             Subject = itemView.findViewById(R.id.subject);
