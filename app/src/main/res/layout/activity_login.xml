@@ -7,16 +7,38 @@
     android:background="?attr/colorPrimaryVariant"
     tools:context=".LoginActivity">
 
-    <ImageView
-        android:id="@+id/Pccoe"
-        android:layout_width="262dp"
-        android:layout_height="215dp"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pccoelogo"
-        tools:ignore="ImageContrastCheck" />
+        app:layout_constraintVertical_bias="0.5">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/Pccoe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/pccoelogo"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
