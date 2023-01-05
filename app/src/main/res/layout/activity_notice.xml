@@ -85,8 +85,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="6"
+            android:hint="Enter Message"
             android:inputType="textPersonName"
-            android:text="Name"
             tools:ignore="TouchTargetSizeCheck" />
 
         <ImageView

@@ -69,6 +69,7 @@ public class Profile extends Fragment {
             name1=email1.replace("."," ");
             name1=name1.replace("@pccoepune org","");
             name1 = name1.replaceAll("[0-9]","");
+            email1=email1.toUpperCase();
             name.setText(name1);
         }
         // Initialize sign in client
