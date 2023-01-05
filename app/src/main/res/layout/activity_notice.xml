@@ -84,9 +84,17 @@
             android:id="@+id/uploadtext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:layout_weight="6"
             android:inputType="textPersonName"
             android:text="Name"
             tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageView
+            android:id="@+id/sendbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            app:srcCompat="@android:drawable/ic_menu_send" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
