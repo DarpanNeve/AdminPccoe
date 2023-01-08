@@ -147,6 +147,7 @@ public class NoticeActivity extends AppCompatActivity {
                 .setQuery(FirebaseDatabase.getInstance().getReference().child("chats"), NoticeModel.class)
                 .build();
         NoticeAdapter =new NoticeAdapter(options);
+
         recyclerView.setAdapter(NoticeAdapter);
 
 
