@@ -60,10 +60,7 @@
         android:layout_height="0dp"
         android:layout_weight="2"
         android:paddingTop="25dp"
-        android:paddingBottom="15dp"
-        app:stackFromEnd="true"
-        app:reverseLayout="true"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,32 +68,46 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 
-    <LinearLayout
-        android:id="@+id/linearLayout3"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="15dp"
-        android:foregroundGravity="bottom"
-        android:gravity="bottom"
-        android:orientation="horizontal"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+        app:layout_constraintVertical_bias="0.5">
 
-        <EditText
-            android:id="@+id/uploadtext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="6"
-            android:hint="Enter Message"
-            android:inputType="textPersonName"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <ImageView
-            android:id="@+id/sendbutton"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            app:srcCompat="@android:drawable/ic_menu_send" />
-    </LinearLayout>
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/uploadtext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:hint="Enter Message"
+                android:inputType="textPersonName"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/sendbutton"
+                android:layout_width="97dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:isScrollContainer="false"
+                app:srcCompat="@android:drawable/ic_menu_send" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

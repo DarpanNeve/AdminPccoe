@@ -14,4 +14,9 @@
     <string name="about">About</string>
     <string name="url">https://d155-2401-4900-1ff2-2385-314c-3055-59f6-7e5a.in.ngrok.io</string>
     <string name="teacher_weekly_time_table">Teacher Weekly Time Table</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="prn">Prn</string>
+    <string name="roll_no">Roll no.</string>
+    <string name="branch">Branch</string>
 </resources>

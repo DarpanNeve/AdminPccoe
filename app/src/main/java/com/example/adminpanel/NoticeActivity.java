@@ -60,6 +60,14 @@ public class NoticeActivity extends AppCompatActivity {
         firebaseUser=firebaseAuth.getCurrentUser();
         firebaseDatabase = FirebaseDatabase.getInstance();
         googleSignInClient= GoogleSignIn.getClient(this, GoogleSignInOptions.DEFAULT_SIGN_IN);
+        FirebaseRecyclerOptions<NoticeModel> options
+                = new FirebaseRecyclerOptions.Builder<NoticeModel>()
+                .setQuery(FirebaseDatabase.getInstance().getReference().child("chats"), NoticeModel.class)
+                .build();
+        NoticeAdapter =new NoticeAdapter(options);
+        LinearLayoutManager lm = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true); // last argument (true) is flag for reverse layout
+        recyclerView.setLayoutManager(lm);
+        recyclerView.setAdapter(NoticeAdapter);
 
         data = new data();
 
@@ -116,7 +124,6 @@ public class NoticeActivity extends AppCompatActivity {
                         // our object class to our database reference.
                         // data base reference will sends data to firebase.
                         mDatabase.setValue(data);
-
                         // after adding this data we are showing toast message.
                         Toast.makeText(NoticeActivity.this, "data added", Toast.LENGTH_SHORT).show();
                         sendmessage.setText("");
@@ -133,8 +140,6 @@ public class NoticeActivity extends AppCompatActivity {
             }
         });
 // ...
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("chats");
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         logo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -142,13 +147,7 @@ public class NoticeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        FirebaseRecyclerOptions<NoticeModel> options
-                = new FirebaseRecyclerOptions.Builder<NoticeModel>()
-                .setQuery(FirebaseDatabase.getInstance().getReference().child("chats"), NoticeModel.class)
-                .build();
-        NoticeAdapter =new NoticeAdapter(options);
 
-        recyclerView.setAdapter(NoticeAdapter);
 
 
     }
