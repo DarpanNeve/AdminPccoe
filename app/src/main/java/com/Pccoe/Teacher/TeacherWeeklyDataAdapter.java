@@ -1,4 +1,4 @@
-package com.example.adminpanel;
+package com.Pccoe.Teacher;
 
 import android.view.LayoutInflater;
 import android.view.View;

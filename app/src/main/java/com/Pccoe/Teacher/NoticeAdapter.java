@@ -1,4 +1,4 @@
-package com.example.adminpanel;
+package com.Pccoe.Teacher;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,9 +36,9 @@ public class NoticeAdapter extends FirebaseRecyclerAdapter<NoticeModel,NoticeAda
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
-            name=(TextView)itemView.findViewById(R.id.MessageName);
-            message=(TextView) itemView.findViewById(R.id.Message);
-            time=(TextView)itemView.findViewById(R.id.NoticeTime);
+            name= itemView.findViewById(R.id.MessageName);
+            message= itemView.findViewById(R.id.Message);
+            time= itemView.findViewById(R.id.NoticeTime);
         }
     }
 }

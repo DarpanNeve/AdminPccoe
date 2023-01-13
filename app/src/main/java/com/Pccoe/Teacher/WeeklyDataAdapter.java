@@ -1,4 +1,4 @@
-package com.example.adminpanel;
+package com.Pccoe.Teacher;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,9 +8,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ClassroomWeeklyDataAdapter extends RecyclerView.Adapter{
+public class WeeklyDataAdapter extends RecyclerView.Adapter {
     MainModel[] data;
-    public ClassroomWeeklyDataAdapter(MainModel[] data) {
+    public WeeklyDataAdapter(MainModel[] data) {
         this.data = data;
     }
     @NonNull
@@ -19,59 +19,58 @@ public class ClassroomWeeklyDataAdapter extends RecyclerView.Adapter{
         View view;
         if (viewType == 1) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.weekly_break_view, parent, false);
-            return new WeeklyDataAdapter.ViewHolderTwo(view);
+            return new ViewHolderTwo(view);
         }
         if (viewType == 2) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.weekly_lunch_break_view, parent, false);
-            return new WeeklyDataAdapter.ViewHolderThree(view);
+            return new ViewHolderThree(view);
         }
         if (viewType == 3) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.weekly_practical_view, parent, false);
-            return new WeeklyDataAdapter.ViewHolderFour(view);
+            return new ViewHolderFour(view);
         }
         if (viewType == 4) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.weekly_two_hour_view, parent, false);
-            return new WeeklyDataAdapter.ViewHolderFive(view);
+            return new ViewHolderFive(view);
         }
         if (viewType == 5) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.weekly_half_hour_view, parent, false);
-            return new WeeklyDataAdapter.ViewHolderSix(view);
+            return new ViewHolderSix(view);
         }
         view = LayoutInflater.from(parent.getContext()).inflate(R.layout.weekly_theory_view, parent, false);
-        return new WeeklyDataAdapter.ViewHolderOne(view);
+        return new ViewHolderOne(view);
     }
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         switch (data[position].getType()) {
             case "B":
-                WeeklyDataAdapter.ViewHolderTwo viewHolderTwo = (WeeklyDataAdapter.ViewHolderTwo) holder;
-                viewHolderTwo.Classroom.setText(String.valueOf(data[position].getClassroom()));
+                ViewHolderTwo viewHolderTwo = (ViewHolderTwo) holder;
                 break;
             case "L":
-                WeeklyDataAdapter.ViewHolderThree viewHolderThree = (WeeklyDataAdapter.ViewHolderThree) holder;
+                ViewHolderThree viewHolderThree = (ViewHolderThree) holder;
                 break;
             case "S":
-                WeeklyDataAdapter.ViewHolderFive viewHolderFive = (WeeklyDataAdapter.ViewHolderFive) holder;
+                ViewHolderFive viewHolderFive = (ViewHolderFive) holder;
                 viewHolderFive.Subject.setText(String.valueOf(data[position].getSubject()));
                 viewHolderFive.Classroom.setText(String.valueOf(data[position].getClassroom()));
                 viewHolderFive.Teacher.setText(String.valueOf(data[position].getTeacher()));
                 break;
             case "H":
-                WeeklyDataAdapter.ViewHolderSix viewHolderSix = (WeeklyDataAdapter.ViewHolderSix) holder;
+                ViewHolderSix viewHolderSix = (ViewHolderSix) holder;
                 viewHolderSix.Subject.setText(String.valueOf(data[position].getSubject()));
                 viewHolderSix.Classroom.setText(String.valueOf(data[position].getClassroom()));
                 viewHolderSix.Teacher.setText(String.valueOf(data[position].getTeacher()));
                 break;
 
             case "P":
-                WeeklyDataAdapter.ViewHolderFour viewHolderFour = (WeeklyDataAdapter.ViewHolderFour) holder;
+                ViewHolderFour viewHolderFour = (ViewHolderFour) holder;
                 viewHolderFour.Subject.setText(String.valueOf(data[position].getSubject()));
                 viewHolderFour.Classroom.setText(String.valueOf(data[position].getClassroom()));
                 viewHolderFour.Batch.setText(String.valueOf(data[position].getBatch()));
                 viewHolderFour.Teacher.setText(String.valueOf(data[position].getTeacher()));
                 break;
             default:
-                WeeklyDataAdapter.ViewHolderOne viewHolderOne = (WeeklyDataAdapter.ViewHolderOne) holder;
+                ViewHolderOne viewHolderOne = (ViewHolderOne) holder;
                 viewHolderOne.Subject.setText(String.valueOf(data[position].getSubject()));
                 viewHolderOne.Classroom.setText(String.valueOf(data[position].getClassroom()));
                 viewHolderOne.Teacher.setText(String.valueOf(data[position].getTeacher()));

@@ -1,4 +1,4 @@
-package com.example.adminpanel;
+package com.Pccoe.Teacher;
 
 public class NoticeModel {
     String name;

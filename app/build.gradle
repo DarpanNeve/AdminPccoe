@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.adminpanel'
+    namespace 'com.Pccoe.Teacher'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.adminpanel"
+        applicationId "com.Pccoe.Teacher"
         minSdk 21
         targetSdk 32
         versionCode 1

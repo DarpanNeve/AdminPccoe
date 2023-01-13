@@ -1,6 +1,5 @@
-package com.example.adminpanel;
+package com.Pccoe.Teacher;
 
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;

@@ -1,4 +1,4 @@
-package com.example.adminpanel;
+package com.Pccoe.Teacher;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -52,8 +52,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class WeeklyTImeTable extends AppCompatActivity {
-    String[] division = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"};
+public class TeacherWeeklyTImeTable extends AppCompatActivity {
+    String[] division = {"MRP", "6409CR", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"};
     Button search,export;
     private final int REQUESTCODE=100;
     RecyclerView mondaydata ,tuesdaydata,wednesdaydata,thursdaydata,fridaydata;
@@ -62,26 +62,24 @@ public class WeeklyTImeTable extends AppCompatActivity {
     String selectdivision,user;
     ScrollView timetableview;
     private final String url ="https://d291-103-151-234-92.in.ngrok.io";
-
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_weekly_time_table);
+        setContentView(R.layout.activity_teacher_weekly_time_table);
         Spinner Division = findViewById(R.id.Division);
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, division);
         Division.setAdapter(adapter2);
         search = findViewById(R.id.search);
         mondaydata = findViewById(R.id.Mondaydata);
-        mondaydata.setLayoutManager(new LinearLayoutManager(WeeklyTImeTable.this, LinearLayoutManager.HORIZONTAL, false));
+        mondaydata.setLayoutManager(new LinearLayoutManager(TeacherWeeklyTImeTable.this, LinearLayoutManager.HORIZONTAL, false));
         tuesdaydata = findViewById(R.id.Tuesdaydata);
-        tuesdaydata.setLayoutManager(new LinearLayoutManager(WeeklyTImeTable.this, LinearLayoutManager.HORIZONTAL, false));
+        tuesdaydata.setLayoutManager(new LinearLayoutManager(TeacherWeeklyTImeTable.this, LinearLayoutManager.HORIZONTAL, false));
         wednesdaydata = findViewById(R.id.Wednesdaydata);
-        wednesdaydata.setLayoutManager(new LinearLayoutManager(WeeklyTImeTable.this, LinearLayoutManager.HORIZONTAL, false));
+        wednesdaydata.setLayoutManager(new LinearLayoutManager(TeacherWeeklyTImeTable.this, LinearLayoutManager.HORIZONTAL, false));
         thursdaydata = findViewById(R.id.Thursdaydata);
-        thursdaydata.setLayoutManager(new LinearLayoutManager(WeeklyTImeTable.this, LinearLayoutManager.HORIZONTAL, false));
+        thursdaydata.setLayoutManager(new LinearLayoutManager(TeacherWeeklyTImeTable.this, LinearLayoutManager.HORIZONTAL, false));
         fridaydata = findViewById(R.id.Fridaydata);
-        fridaydata.setLayoutManager(new LinearLayoutManager(WeeklyTImeTable.this, LinearLayoutManager.HORIZONTAL, false));
+        fridaydata.setLayoutManager(new LinearLayoutManager(TeacherWeeklyTImeTable.this, LinearLayoutManager.HORIZONTAL, false));
         layout=findViewById(R.id.layout);
         timetableview=findViewById(R.id.timetableview);
         timetableview.setVisibility(View.INVISIBLE);
@@ -105,8 +103,8 @@ public class WeeklyTImeTable extends AppCompatActivity {
         });
         export();
     }
-    private void showdata(String selectday,RecyclerView RV,String selectdivision) {
-        StringRequest request = new StringRequest(Request.Method.POST, url + "/fetch_Data.php", new Response.Listener<String>() {
+    private void showdata(String selectday, RecyclerView RV, String selectdivision) {
+        StringRequest request = new StringRequest(Request.Method.POST, url + "/fetch_teacher_data.php", new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
@@ -116,7 +114,7 @@ public class WeeklyTImeTable extends AppCompatActivity {
                 MainModel[] data = gson.fromJson(response, MainModel[].class);
                 user= gson.toJson(data);
                 if(user.length()!=2) {
-                    WeeklyDataAdapter adapters = new WeeklyDataAdapter(data);
+                    TeacherWeeklyDataAdapter adapters = new TeacherWeeklyDataAdapter(data);
                     RV.setAdapter(adapters);
                     Toast.makeText(getApplicationContext(), "successful", Toast.LENGTH_SHORT).show();
                 }
@@ -124,7 +122,7 @@ public class WeeklyTImeTable extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "No Response Found", Toast.LENGTH_SHORT).show();
 
                 }
-               
+
             }
         }, new Response.ErrorListener() {
             @Override
@@ -136,12 +134,12 @@ public class WeeklyTImeTable extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> param = new HashMap<>();
-                param.put("Division", selectdivision);
+                param.put("Teacher", selectdivision);
                 param.put("Day", selectday);
                 return param;
             }
         };
-        RequestQueue queue = Volley.newRequestQueue(WeeklyTImeTable.this);
+        RequestQueue queue = Volley.newRequestQueue(TeacherWeeklyTImeTable.this);
         queue.add(request);
     }
     @RequiresApi(api = Build.VERSION_CODES.R)
@@ -166,7 +164,7 @@ public class WeeklyTImeTable extends AppCompatActivity {
                 }
             }
         }
-        if(ContextCompat.checkSelfPermission(WeeklyTImeTable.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)==PackageManager.PERMISSION_GRANTED){
+        if(ContextCompat.checkSelfPermission(TeacherWeeklyTImeTable.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)==PackageManager.PERMISSION_GRANTED){
             try {
                 Createpdf(selectdivision);
             } catch (FileNotFoundException e) {
@@ -203,8 +201,8 @@ public class WeeklyTImeTable extends AppCompatActivity {
                 Log.d("size",""+layout.getWidth()+""+layout.getWidth());
                 bitmap=LoadBitmap(layout,layout.getWidth(),layout.getHeight());
                 ImageBitmap= BitmapFactory.decodeResource(getResources(),R.drawable.time_table);
-                scaledImageBitmap=Bitmap.createScaledBitmap(ImageBitmap,2526,1785,false);
-                Toast.makeText(WeeklyTImeTable.this, ""+layout.getWidth()+","+layout.getWidth(), Toast.LENGTH_SHORT).show();
+                scaledImageBitmap= Bitmap.createScaledBitmap(ImageBitmap,2526,1785,false);
+                Toast.makeText(TeacherWeeklyTImeTable.this, ""+layout.getWidth()+","+layout.getWidth(), Toast.LENGTH_SHORT).show();
                 showDialogForPermission();
             }
         });

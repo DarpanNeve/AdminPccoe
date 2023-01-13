@@ -8,6 +8,43 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:873112653322:android:7a73bc48157a40288499f3",
+        "android_client_info": {
+          "package_name": "com.Pccoe.Teacher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "873112653322-2blge1oaob8690qv91s3cemm0qmet9ru.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Pccoe.Teacher",
+            "certificate_hash": "a44294915760f68c0e8c560c8ced6d3d10f6044e"
+          }
+        },
+        {
+          "client_id": "873112653322-asbm6uhvint6h7n5tnkuh8bijmv13cvd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO5oN_z_GfGlepJVfpT06uHVINYUyEZFE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "873112653322-asbm6uhvint6h7n5tnkuh8bijmv13cvd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:873112653322:android:f198e6692d7690f68499f3",
         "android_client_info": {
           "package_name": "com.example.adminpanel"
@@ -23,40 +60,11 @@
           }
         },
         {
-          "client_id": "873112653322-asbm6uhvint6h7n5tnkuh8bijmv13cvd.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAO5oN_z_GfGlepJVfpT06uHVINYUyEZFE"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "873112653322-asbm6uhvint6h7n5tnkuh8bijmv13cvd.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:873112653322:android:eb470f1804bb36bb8499f3",
-        "android_client_info": {
-          "package_name": "com.example.pccoe"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "873112653322-mlvu1m26jhe2h3u1rpj8rrov875h7quj.apps.googleusercontent.com",
+          "client_id": "873112653322-h2bof75ccovafr1j2hvtc02vku1ihjn8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.pccoe",
-            "certificate_hash": "066c7ec89f230d87e5d3b50b7a0f605aed2bdc2d"
+            "package_name": "com.example.adminpanel",
+            "certificate_hash": "a44294915760f68c0e8c560c8ced6d3d10f6044e"
           }
         },
         {
@@ -82,18 +90,34 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:873112653322:android:d2071a812217ba3b8499f3",
+        "mobilesdk_app_id": "1:873112653322:android:49b5036bcb01259c8499f3",
         "android_client_info": {
-          "package_name": "com.example.pccoefinal"
+          "package_name": "com.examples.pccoe"
         }
       },
       "oauth_client": [
         {
-          "client_id": "873112653322-ds9j96bukceglbu14st589aq2s4vt6dv.apps.googleusercontent.com",
+          "client_id": "873112653322-3gaq08g9nh0jl0r30vpn528dhcqic6rg.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.pccoefinal",
-            "certificate_hash": "1a532498c8a862b5e24634042bc7de3c8f92623f"
+            "package_name": "com.examples.pccoe",
+            "certificate_hash": "066c7ec89f230d87e5d3b50b7a0f605aed2bdc2d"
+          }
+        },
+        {
+          "client_id": "873112653322-ms38nt0oj9avgcvulqoj8pvvscauempr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.examples.pccoe",
+            "certificate_hash": "daa90797a3b6d03a18f14605444a456667df62fc"
+          }
+        },
+        {
+          "client_id": "873112653322-tcs1rihoa3f05vomq3f4qfeinfgvalog.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.examples.pccoe",
+            "certificate_hash": "a44294915760f68c0e8c560c8ced6d3d10f6044e"
           }
         },
         {
