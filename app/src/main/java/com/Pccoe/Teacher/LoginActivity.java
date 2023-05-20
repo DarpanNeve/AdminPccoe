@@ -1,24 +1,20 @@
 package com.Pccoe.Teacher;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
@@ -39,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         googleSignInOptions=new GoogleSignInOptions.Builder(
                 GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("873112653322-asbm6uhvint6h7n5tnkuh8bijmv13cvd.apps.googleusercontent.com")
+                .requestIdToken("140073654540-lvff8thgu18ivu3j1uconpfrnr6v6e8n.apps.googleusercontent.com")
                 .requestProfile()
                 .requestEmail()
                 .build();
@@ -58,13 +54,10 @@ public class LoginActivity extends AppCompatActivity {
             // Start activity for result
             startActivityForResult(intent,100);
         }
-        logo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=mGoogleSignInClient.getSignInIntent();
-                // Start activity for result
-                startActivityForResult(intent,100);
-            }
+        logo.setOnClickListener(v -> {
+            Intent intent=mGoogleSignInClient.getSignInIntent();
+            // Start activity for result
+            startActivityForResult(intent,100);
         });
     }
     @Override
@@ -86,24 +79,21 @@ public class LoginActivity extends AppCompatActivity {
                                 .getCredential(googleSignInAccount.getIdToken()
                                         ,null);
                         firebaseAuth.signInWithCredential(authCredential)
-                                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<AuthResult> task) {
-                                        // Check condition
-                                        if(task.isSuccessful())
-                                        {   // When task is successful
-                                            // Redirect to profile activity
-                                            startActivity(new Intent(LoginActivity.this,MainActivity.class)
-                                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-                                            finish();
-                                        }
-                                        else
-                                        {
-                                            // When task is unsuccessful
-                                            // Display Toast
-                                            toast("Authentication Failed :"+ Objects.requireNonNull(task.getException())
-                                                    .getMessage());
-                                        }
+                                .addOnCompleteListener(this, task -> {
+                                    // Check condition
+                                    if(task.isSuccessful())
+                                    {   // When task is successful
+                                        // Redirect to profile activity
+                                        startActivity(new Intent(LoginActivity.this,MainActivity.class)
+                                                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                                        finish();
+                                    }
+                                    else
+                                    {
+                                        // When task is unsuccessful
+                                        // Display Toast
+                                        toast("Authentication Failed :"+ Objects.requireNonNull(task.getException())
+                                                .getMessage());
                                     }
                                 });
                     }

@@ -39,7 +39,7 @@ public class DailyTimeTable extends Fragment {
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
     String user,email,name,dummy;
-    private final String url="http://181.215.79.82";
+    private final String url="http://117.198.136.16";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
