@@ -61,7 +61,7 @@ public class WeeklyTImeTable extends AppCompatActivity {
     LinearLayout layout;
     String selectdivision,user;
     ScrollView timetableview;
-    private final String url ="https://d291-103-151-234-92.in.ngrok.io";
+    private final String url ="http://117.198.136.16";
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -124,7 +124,7 @@ public class WeeklyTImeTable extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "No Response Found", Toast.LENGTH_SHORT).show();
 
                 }
-               
+
             }
         }, new Response.ErrorListener() {
             @Override
@@ -190,6 +190,11 @@ public class WeeklyTImeTable extends AppCompatActivity {
             } else {
                 showDialogForPermission();
                 Toast.makeText(this, "Permission Denied ", Toast.LENGTH_SHORT).show();
+                try {
+                    Createpdf(selectdivision);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
             }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
